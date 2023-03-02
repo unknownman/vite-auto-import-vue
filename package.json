@@ -1,34 +1,28 @@
 {
   "name": "vite-auto-import-vue",
-  "version": "1.0.0",
-  "description": "A light plugin for Vite to automatically import Vue components and layouts",
+  "version": "0.1.1",
+  "description": "a lightweight Vite plugin for auto importing Vue components and layouts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
-    "prepare": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unknownman/vite-auto-import-vue.git"
   },
   "keywords": [
     "vite",
     "vue",
-    "auto import",
-    "component",
-    "layout"
+    "auto",
+    "import",
+    "layout",
+    "inertia",
+    "laravel"
   ],
   "author": "áliJoder",
   "license": "MIT",
-  "dependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6"
+  "bugs": {
+    "url": "https://github.com/unknownman/vite-auto-import-vue/issues"
   },
-  "peerDependencies": {
-    "vite": "^2.0.0"
-  },
-  "devDependencies": {
-    "rollup": "^2.59.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^11.0.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^7.0.2"
-  }
+  "homepage": "https://github.com/unknownman/vite-auto-import-vue#readme"
 }

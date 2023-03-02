@@ -1,15 +1,31 @@
-// /src/auto-import/transforms/template.js
+const toPascalCase = require('./toPascalCase');
 
-import { toPascalCase } from './index';
+module.exports = function templateTransform(code, { scopeId }) {
+  const templateRE = /<template(?:\s+[^>]+)?>/m;
+  const templateMatch = code.match(templateRE);
 
-export default function transformTemplate(code, id) {
-  const layout = code.match(/<template[^>]+layout="([^"]+)"/);
-
-  if (layout) {
-    const layoutPath = `@/layouts/${toPascalCase(layout[1])}`;
-    code = code.replace(/<template[^>]+layout="([^"]+)"/, '<template');
-    code = `import ${JSON.stringify(layoutPath)};\n${code}`;
+  if (!templateMatch) {
+    return code;
   }
 
-  return code;
+  const templateStart = templateMatch.index + templateMatch[0].length;
+  const templateEnd = code.lastIndexOf('</template>');
+  const templateContent = code.slice(templateStart, templateEnd);
+  const layoutName = toPascalCase(scopeId);
+
+  return (
+    code.slice(0, templateStart) +
+    `<script>
+import ${JSON.stringify(layoutName)} from '${JSON.stringify(scopeId)}'
+
+export default {
+  components: {
+    ${layoutName},
+  },
 }
+</script>
+` +
+    templateContent +
+    code.slice(templateEnd)
+  );
+};

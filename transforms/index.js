@@ -1,15 +1,17 @@
-// /src/auto-import/transforms/template.js
+function applyTransform(code, transformFn, compilerOptions = {}) {
+  const { parse, transform } = require('@vue/compiler-sfc');
 
-import { toPascalCase } from './index';
-
-export default function transformTemplate(code, id) {
-  const layout = code.match(/<template[^>]+layout="([^"]+)"/);
-
-  if (layout) {
-    const layoutPath = `@/layouts/${toPascalCase(layout[1])}`;
-    code = code.replace(/<template[^>]+layout="([^"]+)"/, '<template');
-    code = `import ${JSON.stringify(layoutPath)};\n${code}`;
+  const sfc = parse(code);
+  if (sfc.errors.length) {
+    throw sfc.errors[0];
   }
 
-  return code;
+  if (sfc.descriptor.script) {
+    sfc.descriptor.script.content = transformFn(
+      sfc.descriptor.script.content,
+      compilerOptions
+    );
+  }
+
+  return sfc.descriptor;
 }

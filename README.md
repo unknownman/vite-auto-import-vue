@@ -1,38 +1,53 @@
 # vite-auto-import-vue
-A lightweight Vite plugin for auto importing Vue components and layouts.
+a lightweight Vite plugin for auto importing Vue components and layouts
 
-## Usage
-This plugin is designed to work with Vite and is suitable for use with the Inertia.js framework. To use, install the package from npm:
-
+## Installation
+Install the package via npm:
 ```sh
-npm install vite-auto-import-vue
+npm install vite-auto-import-vue --save-dev
 ```
 
-Then add it to your Vite config file:
-
+## Usage
+Add the plugin to your `vite.config.js`:
 ```js
-import autoImportVue from 'vite-auto-import-vue';
+import autoImport from 'vite-auto-import-vue';
+
 export default {
   plugins: [
-    autoImportVue(),
+    autoImport(),
   ],
 };
 ```
 
 ## Options
-This plugin has the following options:
+The following options can be passed to the plugin:
 
-- `baseComponentDir`: The base directory to search for Vue component files. Defaults to `src/components`.
-- `baseLayoutDir`: The base directory to search for layout files. Defaults to `src/layouts`.
+- `baseLayoutDir`: Directory containing layout files (default: `src/layouts`).
 
-To configure options, pass an object to the plugin function with the desired options:
+## Inertia.js
+This plugin is especially suitable for use with [Inertia.js](https://inertiajs.com/) and [Vite](https://vitejs.dev/).
 
-```js
-autoImportVue({
-  baseComponentDir: 'src/my-components',
-  baseLayoutDir: 'src/my-layouts',
-});
+To use this plugin with Inertia.js, create a layout file for your Inertia.js pages and add it to the `baseLayoutDir` directory. For example, create a file called `src/layouts/app.vue` with the following content:
+
+```html
+<template>
+  <div>
+    <slot />
+  </div>
+</template>
+
+<script>
+export default {
+  components: {
+    // add additional components
+  },
+  // add additional statements
+};
+</script>
 ```
 
-## About the Author
-This package was developed by áliJoder. You can find more of my work on my [GitHub profile](https://github.com/unknownman).
+## Author
+- áliJoder
+
+## License
+MIT

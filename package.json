@@ -1,6 +1,6 @@
 {
   "name": "vite-auto-import-vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a lightweight Vite plugin for auto importing Vue components and layouts",
   "main": "index.js",
   "scripts": {

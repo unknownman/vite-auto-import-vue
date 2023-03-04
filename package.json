@@ -1,7 +1,7 @@
 {
   "name": "vite-auto-import-vue",
-  "version": "0.1.5",
-  "description": "a lightweight Vite plugin for auto importing Vue components and layouts",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,19 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/unknownman/vite-auto-import-vue.git"
   },
-  "keywords": [
-    "vite",
-    "vue",
-    "auto",
-    "import",
-    "layout",
-    "inertia",
-    "laravel"
-  ],
-  "author": "áliJoder",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/unknownman/vite-auto-import-vue/issues"
   },
-  "homepage": "https://github.com/unknownman/vite-auto-import-vue#readme"
+  "homepage": "https://github.com/unknownman/vite-auto-import-vue#readme",
+  "devDependencies": {
+    "unplugin-auto-import": "^0.15.0",
+    "unplugin-vue-components": "^0.24.0",
+    "vite": "^4.1.4"
+  }
 }

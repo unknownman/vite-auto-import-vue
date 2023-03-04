@@ -14,9 +14,10 @@ export default function vitePluginVueAutoImport (options) {
     options = Object.assign({
         base: "",
         components: ['components'],
-        layouts: ['layouts'],
+        layouts: 'layouts',
         composables: ['composables'],
-        srcAlias: "@"
+        srcAlias: "@",
+        verbos: true
     }, options)
 
     return [

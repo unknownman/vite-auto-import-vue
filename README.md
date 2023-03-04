@@ -31,6 +31,15 @@ export default {
 - `srcAlias`: The alias for your `src` directory. :file_folder:
 - `verbose`: Whether or not to output logging information. :loudspeaker:
 
+## Technologies Used
+
+- [Vite](https://vitejs.dev/): a build tool that serves as a development server with fast builds.
+- [Vue.js](https://vuejs.org/): a popular JavaScript framework for building user interfaces.
+- [unplugin-auto-import/vite](https://github.com/antfu/unplugin-auto-import): a Vite plugin that automatically imports components or any other modules on the fly while you are coding.
+- [unplugin-vue-components/vite](https://github.com/antfu/unplugin-vue-components): a Vite plugin that provides auto import and on-demand registration of Vue single-file components as well as their dependencies.
+
+By using these technologies, the \`vite-auto-import-vue\` plugin is able to provide a seamless and efficient experience for importing and using Vue components and other modules in your Vite projects.
+
 ## Contributing :heart:
 
 Contributions are welcome! Please follow these steps:

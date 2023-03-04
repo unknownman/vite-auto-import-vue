@@ -1,3 +1,4 @@
+import { info } from "./log"
 export default function layoutTransform (options) {
     {
         return {
@@ -6,8 +7,16 @@ export default function layoutTransform (options) {
                 if (!/<template +layout *= *['"](\w+)['"] *>/.test(code)) {
                     return;
                 }
-
-                const layouts = "@/layouts/";
+                console.log("*****************")
+                console.log("*****************")
+                console.log("*****************")
+                console.log("*****************")
+                console.log("*****************")
+                console.log("*****************")
+                console.log("*****************")
+                console.log("*****************")
+                console.log("*****************")
+                const layouts = options.layout || '@/layouts';
                 // const debug = createDebugger("vite:inertia:layout");
                 const isTypeScript = /lang=['"]ts['"]/.test(code);
 
